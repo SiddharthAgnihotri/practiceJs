@@ -1,0 +1,97 @@
+<!-- Family Tree Building -->
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Family Tree</title>
+          <style>
+
+          </style>
+          <script>
+               //We are creating a family Tree
+               // Here Deep Nested JavaScript Object used i which Deepe Nested Array too used
+               //gp is Grand Parent and it is JavaScript Object
+               let gp = {
+                    //JavaScript object has two Memeber
+                    //member1. Propert:value
+                    //member2. functions
+                    name:"VA and SVA",//p:v member
+                    job:"Govt and HW Respectively",//p:v member
+                    c:[{ //c is a child and it is array of  JS Objects
+                         name:"MA",//p:v member
+                         wife:"JA",//p:v member
+                         job:"Private",//p:v member
+                         ch:[{ //ch is child and it is array of JS Objects
+                              name:"GS",//p:v member
+                              husband:"NS",//p:v member
+                              job:"HW and Private Respectively",//p:v member
+                              chi:{//chi is child and it is array of JS Objects
+                                   name:"S",//p:v member
+                                   surname:"S"//p:v member
+                              }
+                         },
+                         {
+                              name:"BA",//p:v member
+                              Job:"Private"//p:v member
+                         }]
+                        },
+                        {
+                          name:"GA",//p:v member
+                          wife:"DA",//p:v member
+                          job:"Govt",//p:v member
+                          ch:[//ch is child and it is array of JS Objects
+                              {
+                                   name:"HA",//p:v member
+                                   job:"Private"//p:v member
+                              },
+                              {
+                                   name:"SA",//p:v member
+                                   job:"none"//p:v member
+                              }
+                          ]        
+                        },
+                        {
+                          name:"MK",//p:v member
+                          husband:"AK",//p:v member
+                          job:"Private",//p:v member
+                          ch:[//ch is child and it is array of JS Objects
+                              {
+                                   name:"HK",//p:v member
+                                   wife:"NK",//p:v member
+                                   job:"Private and Private Respectively"//p:v member
+                              },
+                              {
+                                   name:"RK",//p:v member
+                                   job:"none"//p:v member
+                              }
+                          ]
+                        }
+                    ]
+               };
+          </script>
+     </head>
+     <body>
+
+
+
+          <script>
+               alert("Welcome to Family Tree");
+               console.log("Grand Parent are: "+gp.name);
+               console.log(gp.name+" has "+gp.c.length+" children.");
+               console.log(gp.name+" had "+gp.job+" types of Jobs.");
+               //nested for loop used
+               //old version of for loop used
+               for(var i=0;i<gp.c.length;i++){
+                    console.log("The "+gp.name+" "+i+" child is: "+gp.c[i].name);
+                    console.log("The "+gp.c[i].name+ " has "+ gp.c[i].job+" job.");
+                    console.log("The "+ gp.c[i].name+" has "+ gp.c[i].ch.length+" children.");
+                    for(var j=0;j<gp.c[i].ch.length;j++){
+                         console.log("The Name of Children of "+gp.c[i].name+" are: "+ gp.c[i].ch[j].name);
+
+                    }
+               }
+               
+          </script>
+     </body>
+</html>
